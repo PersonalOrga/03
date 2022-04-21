@@ -14,6 +14,23 @@ use work.basic_package.all;
 
 --!@copydoc top_periphController.vhd
 entity top_periphController is
+  generic (
+    --HoG: Global Generic Variables
+    GLOBAL_DATE : std_logic_vector(31 downto 0) := (others => '0');
+    GLOBAL_TIME : std_logic_vector(31 downto 0) := (others => '0');
+    GLOBAL_VER  : std_logic_vector(31 downto 0) := (others => '0');
+    GLOBAL_SHA  : std_logic_vector(31 downto 0) := (others => '0');
+    TOP_VER     : std_logic_vector(31 downto 0) := (others => '0');
+    TOP_SHA     : std_logic_vector(31 downto 0) := (others => '0');
+    CON_VER     : std_logic_vector(31 downto 0) := (others => '0');
+    CON_SHA     : std_logic_vector(31 downto 0) := (others => '0');
+    HOG_VER     : std_logic_vector(31 downto 0) := (others => '0');
+    HOG_SHA     : std_logic_vector(31 downto 0) := (others => '0');
+
+    --HoG: Project Specific Lists (One for each .src file in your Top/ folder)
+    PAPEROASTRA_SHA : std_logic_vector(31 downto 0) := (others => '0');
+    PAPEROASTRA_VER : std_logic_vector(31 downto 0) := (others => '0')
+    );
   port(
     iCLK        : in  std_logic;
     iKEY        : in    std_logic_vector(1 downto 0);
