@@ -1,0 +1,3 @@
+constraints/periphController.sdc
+constraints/periphController_pins.qsf
+constraints/periphController_properties.qsf
